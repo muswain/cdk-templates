@@ -1,6 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
-import { Template, Match } from 'aws-cdk-lib/assertions';
-import * as CdkTemplates from '../lib/cdk-templates-stack';
+import { Template } from 'aws-cdk-lib/assertions';
+import * as CdkTemplates from '../packages/event-bridge/lib/cdk-templates-stack';
 
 test('SQS Queue and SNS Topic Created', () => {
   const app = new cdk.App();
@@ -11,7 +11,7 @@ test('SQS Queue and SNS Topic Created', () => {
   const template = Template.fromStack(stack);
 
   template.hasResourceProperties('AWS::SQS::Queue', {
-    VisibilityTimeout: 300
+    VisibilityTimeout: 300,
   });
   template.resourceCountIs('AWS::SNS::Topic', 1);
 });
