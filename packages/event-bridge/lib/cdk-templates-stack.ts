@@ -9,7 +9,7 @@ export class CdkTemplatesStack extends Stack {
     super(scope, id, props);
 
     const queue = new sqs.Queue(this, 'CdkTemplatesQueue', {
-      visibilityTimeout: Duration.seconds(300)
+      visibilityTimeout: Duration.seconds(300),
     });
 
     const topic = new sns.Topic(this, 'CdkTemplatesTopic');
