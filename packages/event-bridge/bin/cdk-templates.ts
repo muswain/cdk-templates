@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { CdkTemplatesStack } from '../lib/cdk-templates-stack';
+import { EventBridgeStack } from '../lib/event-bridge-stack';
 
 const app = new cdk.App();
-new CdkTemplatesStack(app, 'CdkTemplatesStack');
+new EventBridgeStack(app, 'EventBridgeStack');
