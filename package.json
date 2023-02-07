@@ -7,13 +7,15 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest",
     "cdk": "cdk",
     "prepare": "husky install",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "prettier": "prettier \"*.{js,json,yml,md}\" \"packages/**/*\"",
     "format": "npm run prettier -- --write",
-    "format:check": "npm run prettier -- --check"
+    "format:check": "npm run prettier -- --check",
+    "test": "jest --config jest.config.ts",
+    "test:watch": "jest --config jest.config.ts --watchAll",
+    "test:coverage": "jest --config jest.config.ts --coverage"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
